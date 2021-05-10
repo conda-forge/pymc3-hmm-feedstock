@@ -1,5 +1,5 @@
 {% set name = "pymc3-hmm" %}
-{% set version = "0.1.6" %}
+{% set version = "0.1.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7741f05e2bda87bf30fb9ff069f992c9acea51812b4db2c861f284db208704a6
+  sha256: c4cbf578eec9b0df1e6f9dcb9a9ee47ebbcf8424999e447d89ae27b14c20c93a
 
 build:
   number: 0
