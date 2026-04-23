@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 85a7ac3ff732aedf198b7ad1fa25e754f1fa83e0651c5da8e4bf51ddafa71342
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy >=1.15.0
     - scipy >=1.2.0
     - pymc3 >=3.11.0
@@ -27,6 +27,8 @@ requirements:
     - mkl-service
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pymc3_hmm
 
